@@ -32,7 +32,7 @@ env CR_DB_USER=postgres CR_DB_PSW=<password_for_db_user> CR_DB_DATABASE=car_cent
 
 6. run service with command
 ```
-env CR_ADDR=:8080 CR_DB_USER=postgres CR_DB_PSW=<password_for_db_user> CR_DB_DATABASE=duplicator CR_DB_ADDR=:5432 go run main.go
+env CR_ADDR=:8080 CR_DB_USER=postgres CR_DB_PSW=<password_for_db_user> CR_DB_DATABASE=car_center CR_DB_ADDR=:5432 go run main.go
 ```
 or with debug logs
 ```
