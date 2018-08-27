@@ -25,10 +25,10 @@ func main() {
 	flag.Parse()
 
 	db := pg.Connect(&pg.Options{
-		Addr:     os.Getenv("DP_DB_ADDR"),
-		User:     os.Getenv("DP_DB_USER"),
-		Password: os.Getenv("DP_DB_PSW"),
-		Database: os.Getenv("DP_DB_DATABASE"),
+		Addr:     os.Getenv("CR_DB_ADDR"),
+		User:     os.Getenv("CR_DB_USER"),
+		Password: os.Getenv("CR_DB_PSW"),
+		Database: os.Getenv("CR_DB_DATABASE"),
 	})
 	defer db.Close()
 

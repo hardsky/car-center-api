@@ -9,12 +9,15 @@ run
 `go run *.go --help` - to read usage details.
 
 We use *dep* as dependency manager.
+After git clone, please, run :
+
+```
+dep ensure
+```
 
 env variables:
 
-- DP_DEBUG
-- DP_ADDR
-- DP_DB_ADDR
-- DP_DB_USER
-- DP_DB_PSW
-- DP_DB_DATABASE
+- CR_DB_ADDR
+- CR_DB_USER
+- CR_DB_PSW
+- CR_DB_DATABASE

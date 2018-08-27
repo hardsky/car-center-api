@@ -14,7 +14,7 @@ import (
 func init() {
 	log.SetOutput(os.Stdout)
 
-	if len(os.Getenv("DP_DEBUG")) > 0 {
+	if len(os.Getenv("CR_DEBUG")) > 0 {
 		log.SetLevel(log.DebugLevel)
 	} else {
 		log.SetLevel(log.InfoLevel)
@@ -24,10 +24,10 @@ func init() {
 func main() {
 
 	d := db.Connect(&db.Opts{
-		Addr:     os.Getenv("DP_DB_ADDR"),
-		User:     os.Getenv("DP_DB_USER"),
-		Password: os.Getenv("DP_DB_PSW"),
-		Database: os.Getenv("DP_DB_DATABASE"),
+		Addr:     os.Getenv("CR_DB_ADDR"),
+		User:     os.Getenv("CR_DB_USER"),
+		Password: os.Getenv("CR_DB_PSW"),
+		Database: os.Getenv("CR_DB_DATABASE"),
 	})
 	log.Info("database is connected")
 
@@ -37,7 +37,7 @@ func main() {
 	log.Info("api routes are established")
 
 	srv := &http.Server{
-		Addr:         os.Getenv("DP_ADDR"),
+		Addr:         os.Getenv("CR_ADDR"),
 		WriteTimeout: time.Second * 15,
 		ReadTimeout:  time.Second * 15,
 		IdleTimeout:  time.Second * 60,
