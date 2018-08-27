@@ -36,5 +36,5 @@ env CR_ADDR=:8080 CR_DB_USER=postgres CR_DB_PSW=<password_for_db_user> CR_DB_DAT
 ```
 or with debug logs
 ```
-env CR_DEBUG=1 CR_ADDR=:8080 CR_DB_USER=postgres CR_DB_PSW=<password_for_db_user> CR_DB_DATABASE=duplicator CR_DB_ADDR=:5432 go run main.go
+    env CR_DEBUG=1 CR_ADDR=:8080 CR_DB_USER=postgres CR_DB_PSW=<password_for_db_user> CR_DB_DATABASE=car_center CR_DB_ADDR=:5432 go run main.go
 ```
