@@ -21,16 +21,15 @@ type CarResponse struct {
 
 // get list
 func (p *API) cars(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
 
-	limit, err := strconv.ParseInt(vars["pageSize"], 10, 64)
+	limit, err := strconv.ParseInt(r.FormValue("pageSize"), 10, 64)
 	if err != nil || limit <= 0 {
 		log.WithError(err).Error("wrong limit")
 		writeResponse(w, &ErrorResponse{"wrong limit"}, http.StatusBadRequest)
 		return
 	}
 
-	offset, err := strconv.ParseInt(vars["page"], 10, 64)
+	offset, err := strconv.ParseInt(r.FormValue("page"), 10, 64)
 	offset -= 1
 	if err != nil || offset < 0 {
 		log.WithError(err).Error("wrong offset")
